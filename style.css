@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+body{
+    width: 100%;;
+    height: 100%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading{
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 11111;
+    color: white;
+}
+
+.loading img{
+    min-width: 300px;
+    max-width: 500px;
+    height: auto;
+}
+
+.title,.director,.producer,.main-image{
+    pointer-events: none;
+}
+
+.main, .main-container, .main-children, img{
+    border-radius: 5px;
+}
+
+img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.main{
+    background-image: url(./assets/img.jpg);
+    margin: 20px;
+    margin-top: 120px;
+    box-shadow: 0 0 20px black;
+}
+
+.main-page-heading{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 100%;
+    background-color: hsl(0, 0%, 0%);
+    color: white;
+    font-size: 2rem;
+    box-shadow: 0px 0px 5px black;
+    z-index: 111;
+    text-align: center;
+}
+
+.main-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: hsla(0, 0%, 51%, 0.387);
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    gap: 20px;
+}
+
+.main-children{
+    padding: 10px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    box-shadow: 0px 0px 2px black;
+    border: 1px solid black;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    cursor: pointer;
+}
+
+.main-children:hover{
+    background-color: rgba(255, 251, 251, 0.367);
+    box-shadow: 0px 0px 10px black;
+    color: black;
+}
+
+.title{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin: 20px 3px;
+}
+
+.director, .producer{
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 300;
+    margin: 10px 3px;
+}
+
+.director p, .producer p{
+    display: inline;
+    font-weight: 700;
+}
+
+footer{
+    height: 70px;
+    /* margin-bottom: 5px; */
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: 0.9rem;
+    color: black;
+    text-shadow: 0 0 10px black;
+    font-weight: 200;
+}
+
+@media (max-width:400px){
+    .main-container{
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        padding: 15px;
+    }
+    .main-page-heading{
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width:500px){
+    .main{
+        margin: 10px;
+        margin-top: 120px;
+    }
+}
